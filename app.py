@@ -37,7 +37,13 @@ retriever = docsearch.as_retriever(search_type="similarity", search_kwargs={"k":
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain_core.prompts import ChatPromptTemplate
 
-llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash", temperature=0.4, max_output_tokens=500)
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.0-flash",
+    temperature=0.4,
+    max_output_tokens=500,
+    google_api_key=os.environ.get("GEMINI_API_KEY")  # explicitly pass the API key
+)
+
 
 prompt = ChatPromptTemplate.from_messages(
     [

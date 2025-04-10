@@ -3,6 +3,7 @@ from pinecone.grpc import PineconeGRPC as Pinecone
 from pinecone import ServerlessSpec
 from langchain_pinecone import PineconeVectorStore
 from dotenv import load_dotenv
+from langchain_huggingface import HuggingFaceEmbeddings
 import os
 
 
